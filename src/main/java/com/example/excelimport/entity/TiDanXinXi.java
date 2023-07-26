@@ -16,7 +16,7 @@ import java.util.Date;
 @Data
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = false)
-public class TiDanXinXI {
+public class TiDanXinXi {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -2,7 +2,7 @@ package com.example.excelimport.controller;
 
 import cn.afterturn.easypoi.excel.ExcelImportUtil;
 import cn.afterturn.easypoi.excel.entity.ImportParams;
-import com.example.excelimport.entity.TiDanXinXI;
+import com.example.excelimport.entity.TiDanXinXi;
 import com.example.excelimport.util.ExcelGenerateUtil;
 import com.google.common.collect.Lists;
 import org.apache.poi.ss.formula.functions.T;
@@ -37,7 +37,7 @@ public class ExcelController {
             params.setTitleRows(1);
             params.setHeadRows(1);
             params.setNeedSave(false);
-            List<T> list = ExcelImportUtil.importExcel(file.getInputStream(), TiDanXinXI.class, params);
+            List<T> list = ExcelImportUtil.importExcel(file.getInputStream(), TiDanXinXi.class, params);
             List<List<T>> subSets = Lists.partition(list, 1);
             subSets.forEach(System.out::println);
         }
@@ -60,7 +60,7 @@ public class ExcelController {
         response.setHeader("Expires", "0");
         response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
         // 导出文件
-        Workbook workbook = ExcelGenerateUtil.outputExcel(TiDanXinXI.class);
+        Workbook workbook = ExcelGenerateUtil.outputExcel(TiDanXinXi.class);
         ServletOutputStream outputStream = response.getOutputStream();
         workbook.write(outputStream);
         workbook.close();

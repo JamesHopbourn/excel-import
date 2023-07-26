@@ -11,7 +11,7 @@ import java.lang.reflect.Field;
 public class GetField {
     @Test
     void get(){
-        Class<TiDanXinXI> demoClass = TiDanXinXI.class;
+        Class<TiDanXinXi> demoClass = TiDanXinXi.class;
         Field[] declaredFields = demoClass.getDeclaredFields();
         for (Field field : declaredFields) {
             Excel annotation = field.getAnnotation(Excel.class);
