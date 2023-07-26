@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="010b6adf-7411-4f6e-8cc1-cf21c4e4f943" name="变更" comment="" />
+    <list default="true" id="010b6adf-7411-4f6e-8cc1-cf21c4e4f943" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/annotation/ExcelName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/controller/ExcelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/controller/ExcelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/entity/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/entity/TiDanXinXI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/excelimport/entity/ExcelGenerate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/excelimport/entity/ExcelGenerate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/excelimport/entity/GetField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/excelimport/entity/GetField.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,11 +21,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="AnnotationType" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="AnnotationType" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -32,6 +42,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2T0p5rwuGETWXd5xJnhcOanlQMT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -158,12 +169,24 @@
       <workItem from="1690264331140" duration="17282000" />
       <workItem from="1690359734797" duration="3865000" />
       <workItem from="1690364759683" duration="2803000" />
-      <workItem from="1690373212334" duration="6233000" />
+      <workItem from="1690373212334" duration="7144000" />
+      <workItem from="1690380677036" duration="2673000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

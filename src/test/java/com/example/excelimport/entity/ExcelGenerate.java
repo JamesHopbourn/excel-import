@@ -27,7 +27,7 @@ public class ExcelGenerate {
         CellStyle requireStyle = getRequireStyle(workbook);
 
         // 第二行考虑使用 for 循环处理
-        List<ExcelField> fieldPOJOList = ExcelPropertiesImpl.allField(Demo.class);
+        List<ExcelField> fieldPOJOList = ExcelPropertiesImpl.allField(TiDanXinXI.class);
 
         // 创建 Sheet
         XSSFSheet sheet = workbook.createSheet("Sheet1");
