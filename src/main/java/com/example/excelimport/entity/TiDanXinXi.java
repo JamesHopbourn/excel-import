@@ -16,7 +16,7 @@ import java.util.Date;
 @Data
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = false)
-public class TiDanXinXi {
+public class TiDanXinXi extends TatiumEntity {
     private static final long serialVersionUID = 1L;
 
     /**
@@ -28,7 +28,7 @@ public class TiDanXinXi {
     /**
      * 物流商名称
      */
-    @Excel(name = "物流商名称", width = 10)
+    @Excel(name = "物流商名称", width = 20)
     private String wuLiuShangMingCheng;
     /**
      * SO编号

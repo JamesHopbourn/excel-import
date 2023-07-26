@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="010b6adf-7411-4f6e-8cc1-cf21c4e4f943" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/annotation/ExcelName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/entity/TatiumEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/controller/ExcelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/controller/ExcelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/entity/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/entity/TiDanXinXI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/excelimport/entity/ExcelGenerate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/excelimport/entity/ExcelGenerate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/excelimport/entity/GetField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/excelimport/entity/GetField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/entity/TiDanXinXi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/entity/TiDanXinXi.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +19,8 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -170,7 +167,8 @@
       <workItem from="1690359734797" duration="3865000" />
       <workItem from="1690364759683" duration="2803000" />
       <workItem from="1690373212334" duration="7144000" />
-      <workItem from="1690380677036" duration="2673000" />
+      <workItem from="1690380677036" duration="2903000" />
+      <workItem from="1690385153312" duration="251000" />
     </task>
     <servers />
   </component>
