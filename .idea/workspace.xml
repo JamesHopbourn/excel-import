@@ -62,7 +62,7 @@
       <recent name="com.example.excelimport.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ExcelImportApplication">
+  <component name="RunManager" selected="JUnit.ExcelGenerate.getAllField">
     <configuration name="UserTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.excelimport.entity.UserTest" />
       <module name="excel-import" />
@@ -139,8 +139,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ExcelImportApplication" />
         <item itemvalue="JUnit.ExcelGenerate.getAllField" />
+        <item itemvalue="Spring Boot.ExcelImportApplication" />
         <item itemvalue="JUnit.GetField.get" />
         <item itemvalue="JUnit.ExcelGenerate.test2" />
         <item itemvalue="应用程序.UserTest" />
@@ -167,7 +167,7 @@
       <workItem from="1690385153312" duration="251000" />
       <workItem from="1690385472390" duration="916000" />
       <workItem from="1690419157148" duration="12109000" />
-      <workItem from="1690436522366" duration="1987000" />
+      <workItem from="1690436522366" duration="2291000" />
     </task>
     <servers />
   </component>
