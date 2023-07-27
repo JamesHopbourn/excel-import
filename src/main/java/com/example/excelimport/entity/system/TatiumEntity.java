@@ -1,4 +1,4 @@
-package com.example.excelimport.entity;
+package com.example.excelimport.entity.system;
 
 import cn.afterturn.easypoi.excel.annotation.Excel;
 import lombok.Data;

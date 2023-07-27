@@ -4,6 +4,7 @@ package com.example.excelimport.entity;
 import cn.afterturn.easypoi.excel.annotation.Excel;
 import com.example.excelimport.annotation.ColorEnums;
 import com.example.excelimport.annotation.ExcelProperties;
+import com.example.excelimport.entity.system.TatiumEntity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
