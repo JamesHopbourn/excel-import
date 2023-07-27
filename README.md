@@ -24,8 +24,8 @@ private String chuanSiDaiMa;
 
 ##### 处理流程
 1. 通过 @ExcelProperties 注解添加备注和颜色
-2. ExcelCellStyleUtil 用于获取不同单元格的样式
-   2.1 例如普通字段黑色、必填字段红色样式
+2. ExcelCellStyleUtil 用于获取不同单元格的样式  
+   2.1 例如普通字段黑色、必填字段红色样式  
 3. 通过 ExcelPropertiesImpl.allField() 方法获取所有含有 @Excel 和 @ExcelProperties 字段  
    3.1 定义一个字段信息类：ExcelField  
    3.2 读取所有需要导出的字段信息，创建 ExcelField 对象  
