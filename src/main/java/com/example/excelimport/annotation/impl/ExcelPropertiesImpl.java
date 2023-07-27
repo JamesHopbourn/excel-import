@@ -28,6 +28,7 @@ public class ExcelPropertiesImpl {
         for (Field declaredField : declaredFields) {
             Annotation[] declaredAnnotations = declaredField.getDeclaredAnnotations();
             for (Annotation declaredAnnotation : declaredAnnotations) {
+                // 找出所有带有 @ExcelProperties 注解的字段
                 if (declaredAnnotation.annotationType().getName().equals(excelPropertiesCanonicalName)){
                     requireFieldList.add(declaredField.getName());
                     break;
@@ -61,7 +62,7 @@ public class ExcelPropertiesImpl {
                     excelField.setName(annotation.name());
                     excelField.setLength((int) annotation.width());
                     // Excel orderNum 属性默认值是 "0"，如果是默认值就给它设置一个较大的数值
-                    // 最后排序的时候就会排在后面，显式定义的 orderNum 就会排在前面
+                    // 最后排序的时候就会排在后面，显式定义的 orderNum 比较小就会排在前面
                     excelField.setOrderNum(annotation.orderNum().equals("0") ? "256" : annotation.orderNum());
                 }
             }
