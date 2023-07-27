@@ -21,6 +21,19 @@ private String soBianHao;
 @Excel(name = "船司代码", width = 20)
 private String chuanSiDaiMa;
 ```
+4. 字段排序，配置 `@Excel` orderNum 属性即可，ExcelPropertiesImpl 会读取值并按照配置生成 Excel
+```java
+@ExcelProperties(description = "箱货跟踪时必填")
+@Excel(name = "提单号", width = 20, orderNum = "1")
+private String tiDanHao;
+
+@Excel(name = "物流商名称", width = 20)
+private String wuLiuShangMingCheng;
+
+@ExcelProperties(description = "红色字段为初始必填项目")
+@Excel(name = "SO编号", width = 30, orderNum = "2")
+private String soBianHao;
+```
 
 ##### 处理流程
 1. 通过 @ExcelProperties 注解添加备注和颜色
