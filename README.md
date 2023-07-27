@@ -27,12 +27,13 @@ private String chuanSiDaiMa;
 @Excel(name = "提单号", width = 20, orderNum = "1")
 private String tiDanHao;
 
-@Excel(name = "物流商名称", width = 20)
-private String wuLiuShangMingCheng;
-
 @ExcelProperties(description = "红色字段为初始必填项目")
 @Excel(name = "SO编号", width = 30, orderNum = "2")
 private String soBianHao;
+
+@ExcelProperties(description = "多次更新导入时作为唯一匹配号")
+@Excel(name = "DN编号", width = 30, orderNum = "3")
+private String dnBianHao;
 ```
 
 ##### 处理流程
