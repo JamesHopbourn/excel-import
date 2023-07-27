@@ -1,5 +1,6 @@
 package com.example.excelimport.entity;
 
+import com.alibaba.fastjson.JSON;
 import com.example.excelimport.annotation.ColorEnums;
 import com.example.excelimport.annotation.impl.ExcelPropertiesImpl;
 import org.apache.poi.ss.usermodel.Cell;
@@ -12,12 +13,23 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.FileOutputStream;
 import java.io.OutputStream;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.example.excelimport.util.ExcelCellStyleUtil.*;
 
 @SpringBootTest
 public class ExcelGenerate {
+    @Test
+    void getAllField(){
+        List<ExcelField> excelFields = ExcelPropertiesImpl.allField(TiDanXinXi.class);
+        List<ExcelField> collect = excelFields.stream()
+                .sorted(Comparator.comparingInt(o -> Integer.parseInt(o.getOrderNum())))
+                .collect(Collectors.toList());
+        System.out.println(JSON.toJSONString(collect));
+    }
+    
     @Test
     public void test2() {
         XSSFWorkbook workbook = new XSSFWorkbook();

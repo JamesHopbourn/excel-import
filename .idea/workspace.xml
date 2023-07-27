@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="010b6adf-7411-4f6e-8cc1-cf21c4e4f943" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/annotation/ExcelProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/annotation/ExcelProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/annotation/impl/ExcelPropertiesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/annotation/impl/ExcelPropertiesImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/controller/TiDanXinXiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/controller/TiDanXinXiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/controller/system/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/controller/system/BaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/entity/ExcelField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/entity/ExcelField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/entity/TiDanXinXi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/entity/TiDanXinXi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/excelimport/entity/ExcelGenerate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/excelimport/entity/ExcelGenerate.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +86,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ExcelGenerate.getAllField" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="excel-import" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.excelimport.entity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.excelimport.entity" />
+      <option name="MAIN_CLASS_NAME" value="com.example.excelimport.entity.ExcelGenerate" />
+      <option name="METHOD_NAME" value="getAllField" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ExcelGenerate.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="excel-import" />
       <extension name="coverage">
@@ -110,22 +134,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest.fieldTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="excel-import" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.excelimport.entity.system.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.excelimport.entity" />
-      <option name="MAIN_CLASS_NAME" value="com.example.excelimport.entity.UserTest" />
-      <option name="METHOD_NAME" value="fieldTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ExcelImportApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="excel-import" />
       <extension name="coverage">
@@ -142,10 +150,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.ExcelImportApplication" />
+        <item itemvalue="JUnit.ExcelGenerate.getAllField" />
         <item itemvalue="JUnit.GetField.get" />
         <item itemvalue="JUnit.ExcelGenerate.test2" />
         <item itemvalue="应用程序.UserTest" />
-        <item itemvalue="JUnit.UserTest.fieldTest" />
       </list>
     </recent_temporary>
   </component>
@@ -168,7 +176,8 @@
       <workItem from="1690380677036" duration="2903000" />
       <workItem from="1690385153312" duration="251000" />
       <workItem from="1690385472390" duration="916000" />
-      <workItem from="1690419157148" duration="2112000" />
+      <workItem from="1690419157148" duration="12109000" />
+      <workItem from="1690436522366" duration="1091000" />
     </task>
     <servers />
   </component>

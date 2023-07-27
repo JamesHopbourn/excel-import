@@ -23,10 +23,4 @@ public @interface ExcelProperties {
      * @return description
      */
     String description() default "";
-
-    /**
-     * 字段在单元格中的位置，实现 Comparator 接口进行排序
-      * @return index
-     */
-    int index() default 0;
 }

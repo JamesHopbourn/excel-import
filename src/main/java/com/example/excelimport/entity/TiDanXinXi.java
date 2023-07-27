@@ -24,7 +24,7 @@ public class TiDanXinXi extends TatiumEntity {
      * 提单号
      */
     @ExcelProperties(description = "箱货跟踪时必填")
-    @Excel(name = "提单号", width = 20)
+    @Excel(name = "提单号", width = 20, orderNum = "1")
     private String tiDanHao;
     /**
      * 物流商名称
@@ -35,13 +35,13 @@ public class TiDanXinXi extends TatiumEntity {
      * SO编号
      */
     @ExcelProperties(description = "红色字段为初始必填项目")
-    @Excel(name = "SO编号", width = 30)
+    @Excel(name = "SO编号", width = 30, orderNum = "2")
     private String soBianHao;
     /**
      * DN编号
      */
     @ExcelProperties(description = "多次更新导入时作为唯一匹配号")
-    @Excel(name = "DN编号", width = 30)
+    @Excel(name = "DN编号", width = 30, orderNum = "3")
     private String dnBianHao;
     /**
      * 客户名称
@@ -103,19 +103,19 @@ public class TiDanXinXi extends TatiumEntity {
      * 船司代码
      */
     @ExcelProperties(value = ColorEnums.BLACK, description = "箱货跟踪时必填")
-    @Excel(name = "船司代码", width = 20)
+    @Excel(name = "船司代码", width = 20,orderNum = "4")
     private String chuanSiDaiMa;
     /**
      * 船名
      */
     @ExcelProperties
-    @Excel(name = "船名", width = 10)
+    @Excel(name = "船名", width = 10, orderNum = "5")
     private String chuanMing;
     /**
      * 航次
      */
     @ExcelProperties
-    @Excel(name = "航次", width = 10)
+    @Excel(name = "航次", width = 10, orderNum = "6")
     private String hangCi;
     /**
      * ETD
@@ -145,12 +145,12 @@ public class TiDanXinXi extends TatiumEntity {
      * 始发港
      */
     @ExcelProperties
-    @Excel(name = "始发港", width = 10)
+    @Excel(name = "始发港", width = 10, orderNum = "7")
     private String shiFaGang;
     /**
      * 目的港
      */
-    @Excel(name = "目的港", width = 10)
+    @Excel(name = "目的港", width = 10, orderNum = "8")
     private String muDiGang;
     /**
      * 进箱开始

@@ -15,8 +15,8 @@ import java.io.IOException;
 @RequestMapping("user")
 public class UserController extends BaseController {
     @PostMapping("importExcel")
-    public void importExcel(HttpServletRequest request) throws Exception {
-        super.importExcelData(request, User.class);
+    public void importExcel(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        super.importExcelData(request, response,User.class);
     }
 
     @GetMapping("exportExcel")
