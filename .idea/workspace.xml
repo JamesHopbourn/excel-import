@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="010b6adf-7411-4f6e-8cc1-cf21c4e4f943" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/controller/system/BaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/controller/ExcelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/controller/TiDanXinXiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/excelimport/entity/GetField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/excelimport/entity/GetField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +70,7 @@
       <module name="excel-import" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.excelimport.entity.*" />
+          <option name="PATTERN" value="com.example.excelimport.entity.system.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -87,7 +82,7 @@
       <module name="excel-import" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.excelimport.entity.*" />
+          <option name="PATTERN" value="com.example.excelimport.entity.system.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -103,7 +98,7 @@
       <module name="excel-import" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.excelimport.entity.*" />
+          <option name="PATTERN" value="com.example.excelimport.entity.system.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -119,7 +114,7 @@
       <module name="excel-import" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.excelimport.entity.*" />
+          <option name="PATTERN" value="com.example.excelimport.entity.system.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -173,7 +168,7 @@
       <workItem from="1690380677036" duration="2903000" />
       <workItem from="1690385153312" duration="251000" />
       <workItem from="1690385472390" duration="916000" />
-      <workItem from="1690419157148" duration="1147000" />
+      <workItem from="1690419157148" duration="2112000" />
     </task>
     <servers />
   </component>
