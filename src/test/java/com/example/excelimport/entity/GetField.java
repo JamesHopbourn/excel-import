@@ -1,7 +1,6 @@
 package com.example.excelimport.entity;
 
 
-import cn.afterturn.easypoi.excel.annotation.Excel;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -11,11 +10,14 @@ import java.lang.reflect.Field;
 public class GetField {
     @Test
     void get(){
-        Class<TiDanXinXi> demoClass = TiDanXinXi.class;
-        Field[] declaredFields = demoClass.getDeclaredFields();
+        Class<User> userClass = User.class;
+        Field[] declaredFields = userClass.getDeclaredFields();
         for (Field field : declaredFields) {
-            Excel annotation = field.getAnnotation(Excel.class);
-            System.out.println(annotation.width());
+            System.out.println(field.getName());
+        }
+        Field[] superDeclaredFields = User.class.getSuperclass().getDeclaredFields();
+        for (Field field : superDeclaredFields) {
+            System.out.println(field.getName());
         }
 
     }

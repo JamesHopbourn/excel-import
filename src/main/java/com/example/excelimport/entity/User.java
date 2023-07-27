@@ -6,7 +6,7 @@ import com.example.excelimport.annotation.ExcelProperties;
 import lombok.Data;
 
 @Data
-public class User {
+public class User extends TatiumEntity{
     @ExcelProperties
     @Excel(name = "用户名")
     private String username;
