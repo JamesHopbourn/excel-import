@@ -11,6 +11,18 @@ public @interface ExcelName {
     String value() default "";
 
     /**
+     * 首行：注意事项
+     * @return
+     */
+    String attention() default "红色字段为必填项";
+
+    /**
+     * 首行：添加导出操作人导出和时间，默认开启
+     * @return
+     */
+    boolean OperationLog() default true;
+
+    /**
      * 是否添加日期时间
      * @return
      */
