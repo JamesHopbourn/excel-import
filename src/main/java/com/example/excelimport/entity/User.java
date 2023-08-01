@@ -7,7 +7,7 @@ import com.example.excelimport.annotation.excel.ExcelProperties;
 import lombok.Data;
 
 @Data
-@ExcelName("这是用户表")
+@ExcelName(value = "这是用户表", prefix = "PTU", enableDateTime = false)
 public class User {
     @ExcelProperties(uniqueField = true)
     @Excel(name = "用户名")

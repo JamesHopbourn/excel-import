@@ -22,17 +22,18 @@ public class ExcelNameImpl {
             builder.append(annotation.prefix()).append(" ");
         }
         // 拼接文件名
-        builder.append(annotation.value()).append(" ");
+        builder.append(annotation.value());
         // 拼接时间
         if (annotation.enableDateTime()){
             DateFormat dateFormatter = new SimpleDateFormat(annotation.dateTimeFormat());
-            builder.append(dateFormatter.format(new Date()));
+            builder.append(" ").append(dateFormatter.format(new Date()));
         }
         // 拼接后缀
         if (!StringUtils.isEmpty(annotation.suffix())){
-            builder.append(annotation.suffix());
+            builder.append(" ").append(annotation.suffix());
         }
         // 文件名编码
+        builder.trimToSize();
         String excelFilename = URLEncoder.encode(builder.append(".xlsx").toString(), "UTF-8")
                 .replace("+", "%20");
         return "attachment; filename*=UTF-8''" + excelFilename;
