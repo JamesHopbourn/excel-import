@@ -9,14 +9,14 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 @AllArgsConstructor
 public enum ColorEnums {
     RED("红色", IndexedColors.RED.getIndex()),
-    GREEN( "绿色", IndexedColors.GREEN.getIndex()),
-    BLACK( "黑色", IndexedColors.BLACK.getIndex()),
-    YELLOW( "黄色", IndexedColors.YELLOW.getIndex());
+    GREEN("绿色", IndexedColors.GREEN.getIndex()),
+    BLACK("黑色", IndexedColors.BLACK.getIndex()),
+    YELLOW("黄色", IndexedColors.YELLOW.getIndex());
 
     private final String colorCode;
     private final short colorEnumCode;
 
-    public CellStyle getCellStyle(XSSFWorkbook workbook, ExcelField excelField){
+    public CellStyle getCellStyle(XSSFWorkbook workbook, ExcelField excelField) {
         // Attention 的字体设置
         Font descriptionFont = workbook.createFont();
         descriptionFont.setFontName("宋体");

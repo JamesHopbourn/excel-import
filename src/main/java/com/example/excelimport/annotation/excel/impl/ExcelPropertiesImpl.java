@@ -78,7 +78,6 @@ public class ExcelPropertiesImpl {
             for (Annotation declaredAnnotation : declaredAnnotations) {
                 // 处理 @ExcelProperties 注解
                 if (declaredAnnotation.annotationType().getName().equals(excelPropertiesCanonicalName)){
-                    
                     requireField.add(String.valueOf(declaredField));
                     ExcelProperties annotation = declaredField.getAnnotation(ExcelProperties.class);
                     ColorEnums colorCode = annotation.value();
