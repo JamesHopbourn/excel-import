@@ -37,6 +37,6 @@ public class ExcelNameImpl {
         // 文件名编码
         String excelFilename = URLEncoder.encode(builder.append(".xlsx").toString(), "UTF-8")
                 .replace("+", "%20");
-        return excelFilename;
+        return "attachment; filename*=UTF-8''" + excelFilename;
     }
 }

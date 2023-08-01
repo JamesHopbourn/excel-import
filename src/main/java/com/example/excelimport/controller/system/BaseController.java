@@ -91,9 +91,7 @@ public class BaseController {
     public void downloadExcel(HttpServletResponse response, Class klass) throws IOException {
         // 生成文件名
         String excelFileName = ExcelNameImpl.getExcelFileName(klass);
-        response.setHeader("Content-Disposition", "attachment; filename*=UTF-8''" + excelFileName);
-        // MIME
-        response.setContentType("application/vnd.ms-excel;");
+        response.setHeader("Content-Disposition", excelFileName);
         // 缓存协议 HTTP 1.0
         response.setHeader("Pragma", "no-cache");
         // 缓存协议 HTTP 1.1
