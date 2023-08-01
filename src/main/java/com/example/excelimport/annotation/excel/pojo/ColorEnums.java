@@ -1,6 +1,5 @@
-package com.example.excelimport.annotation;
+package com.example.excelimport.annotation.excel.pojo;
 
-import com.example.excelimport.entity.ExcelField;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.apache.poi.ss.usermodel.*;

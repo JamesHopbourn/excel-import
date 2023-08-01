@@ -1,4 +1,4 @@
-package com.example.excelimport.annotation;
+package com.example.excelimport.annotation.excel.pojo;
 
 import lombok.Getter;
 

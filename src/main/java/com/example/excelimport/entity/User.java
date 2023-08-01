@@ -1,9 +1,9 @@
 package com.example.excelimport.entity;
 
 import cn.afterturn.easypoi.excel.annotation.Excel;
-import com.example.excelimport.annotation.ColorEnums;
-import com.example.excelimport.annotation.ExcelName;
-import com.example.excelimport.annotation.ExcelProperties;
+import com.example.excelimport.annotation.excel.pojo.ColorEnums;
+import com.example.excelimport.annotation.excel.ExcelName;
+import com.example.excelimport.annotation.excel.ExcelProperties;
 import lombok.Data;
 
 @Data

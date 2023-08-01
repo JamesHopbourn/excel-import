@@ -1,6 +1,6 @@
-package com.example.excelimport.annotation.impl;
+package com.example.excelimport.annotation.excel.impl;
 
-import com.example.excelimport.annotation.ExcelName;
+import com.example.excelimport.annotation.excel.ExcelName;
 import com.example.excelimport.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

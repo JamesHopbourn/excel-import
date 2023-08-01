@@ -1,6 +1,6 @@
-package com.example.excelimport.annotation.impl;
+package com.example.excelimport.annotation.excel.impl;
 
-import com.example.excelimport.annotation.ExcelName;
+import com.example.excelimport.annotation.excel.ExcelName;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 

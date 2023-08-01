@@ -1,8 +1,9 @@
 package com.example.excelimport.entity;
 
 import com.alibaba.fastjson.JSON;
-import com.example.excelimport.annotation.ColorEnums;
-import com.example.excelimport.annotation.impl.ExcelPropertiesImpl;
+import com.example.excelimport.annotation.excel.pojo.ColorEnums;
+import com.example.excelimport.annotation.excel.pojo.ExcelField;
+import com.example.excelimport.annotation.excel.impl.ExcelPropertiesImpl;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Row;
@@ -17,7 +18,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.example.excelimport.util.ExcelCellStyleUtil.*;
+import static com.example.excelimport.annotation.excel.util.ExcelCellStyleUtil.*;
 
 @SpringBootTest
 public class ExcelGenerate {

@@ -1,7 +1,6 @@
-package com.example.excelimport.entity;
+package com.example.excelimport.annotation.excel.pojo;
 
 
-import com.example.excelimport.annotation.ColorEnums;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

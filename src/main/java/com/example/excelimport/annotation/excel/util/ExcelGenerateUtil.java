@@ -1,8 +1,8 @@
-package com.example.excelimport.util;
+package com.example.excelimport.annotation.excel.util;
 
-import com.example.excelimport.annotation.ColorEnums;
-import com.example.excelimport.annotation.impl.ExcelPropertiesImpl;
-import com.example.excelimport.entity.ExcelField;
+import com.example.excelimport.annotation.excel.pojo.ColorEnums;
+import com.example.excelimport.annotation.excel.impl.ExcelPropertiesImpl;
+import com.example.excelimport.annotation.excel.pojo.ExcelField;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Row;
@@ -12,12 +12,10 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.util.List;
 
-import static com.example.excelimport.util.ExcelCellStyleUtil.*;
-
 public class ExcelGenerateUtil {
     public static Workbook outputExcel(Class klass){
         XSSFWorkbook workbook = new XSSFWorkbook();
-        CellStyle descriptionStyle = getDescriptionStyle(workbook);
+        CellStyle descriptionStyle = ExcelCellStyleUtil.getDescriptionStyle(workbook);
 
         // 第二行考虑使用 for 循环处理
         List<ExcelField> excelFieldList = ExcelPropertiesImpl.allField(klass);

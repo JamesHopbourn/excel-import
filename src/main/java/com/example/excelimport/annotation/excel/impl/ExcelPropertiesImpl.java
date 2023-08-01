@@ -1,10 +1,10 @@
-package com.example.excelimport.annotation.impl;
+package com.example.excelimport.annotation.excel.impl;
 
 
 import cn.afterturn.easypoi.excel.annotation.Excel;
-import com.example.excelimport.annotation.ColorEnums;
-import com.example.excelimport.annotation.ExcelProperties;
-import com.example.excelimport.entity.ExcelField;
+import com.example.excelimport.annotation.excel.pojo.ColorEnums;
+import com.example.excelimport.annotation.excel.ExcelProperties;
+import com.example.excelimport.annotation.excel.pojo.ExcelField;
 import org.springframework.stereotype.Component;
 
 import java.lang.annotation.Annotation;
