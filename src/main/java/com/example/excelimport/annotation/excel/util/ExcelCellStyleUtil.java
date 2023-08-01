@@ -14,7 +14,7 @@ public class ExcelCellStyleUtil {
         // Attention 的字体设置
         Font descriptionFont = workbook.createFont();
         descriptionFont.setFontName(ExcelConstant.FONT_NAME);
-        descriptionFont.setColor(IndexedColors.RED.getIndex());
+        descriptionFont.setColor(IndexedColors.BLACK.getIndex());
         descriptionFont.setFontHeightInPoints(ExcelConstant.FONT_HEIGHT_IN_POINTS);
         // Attention 的单元格样式设置
         CellStyle descriptionCellStyle = workbook.createCellStyle();

@@ -23,4 +23,9 @@ public class ExcelConstant {
      * 以「点」表示的字体高度
      */
     public static final short FONT_HEIGHT_IN_POINTS = 12;
+
+    /**
+     * 以「点」表示的首行备注文段高度
+     */
+    public static final short HEAD_ROW_FONT_HEIGHT_IN_POINTS = 900;
 }

@@ -16,7 +16,7 @@ import java.util.Date;
 
 @Data
 @Accessors(chain = true)
-@ExcelName(value = "提单信息表格", dateTimeFormat = "yyyy-MM-dd")
+@ExcelName(value = "提单信息表格")
 @EqualsAndHashCode(callSuper = false)
 public class TiDanXinXi extends TatiumEntity {
     private static final long serialVersionUID = 1L;
@@ -150,6 +150,7 @@ public class TiDanXinXi extends TatiumEntity {
      */
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @Excel(name = "清关日期")
     private Date qingGuanRiQi;
     /**
      * 订阅跟踪日期
