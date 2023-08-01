@@ -2,7 +2,6 @@ package com.example.excelimport.annotation.excel.impl;
 
 import com.example.excelimport.annotation.excel.ExcelName;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.stereotype.Component;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -10,7 +9,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@Component
 public class ExcelNameImpl {
     public static String getExcelFileName(Class klass) throws UnsupportedEncodingException {
         // 获取文件名注解

@@ -2,10 +2,9 @@ package com.example.excelimport.annotation.excel.impl;
 
 
 import cn.afterturn.easypoi.excel.annotation.Excel;
-import com.example.excelimport.annotation.excel.pojo.ColorEnums;
 import com.example.excelimport.annotation.excel.ExcelProperties;
+import com.example.excelimport.annotation.excel.pojo.ColorEnums;
 import com.example.excelimport.annotation.excel.pojo.ExcelField;
-import org.springframework.stereotype.Component;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
@@ -14,7 +13,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Component
 public class ExcelPropertiesImpl {
     /**
      * 获取所有必填字段

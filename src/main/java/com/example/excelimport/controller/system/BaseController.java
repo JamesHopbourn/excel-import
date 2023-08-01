@@ -23,11 +23,11 @@ import java.util.Map;
 
 public class BaseController {
 
-    public static Field[] getAllFields(Class clazz) {
+    public static Field[] getAllFields(Class klass) {
         List<Field> fieldList = new ArrayList<>();
-        while (clazz != null) {
-            fieldList.addAll(new ArrayList<>(Arrays.asList(clazz.getDeclaredFields())));
-            clazz = clazz.getSuperclass();
+        while (klass != null) {
+            fieldList.addAll(new ArrayList<>(Arrays.asList(klass.getDeclaredFields())));
+            klass = klass.getSuperclass();
         }
         Field[] fields = new Field[fieldList.size()];
         fieldList.toArray(fields);
