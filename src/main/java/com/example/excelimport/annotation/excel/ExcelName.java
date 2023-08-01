@@ -27,7 +27,7 @@ public @interface ExcelName {
      * 首行：添加导出操作人导出和时间，默认开启
      * @return
      */
-    boolean OperationLog() default true;
+    boolean operationLog() default true;
 
     /**
      * 是否添加日期时间

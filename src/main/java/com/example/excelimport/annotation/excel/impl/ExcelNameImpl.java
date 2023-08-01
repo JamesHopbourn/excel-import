@@ -43,7 +43,7 @@ public class ExcelNameImpl {
         StringBuilder builder = new StringBuilder();
         ExcelName annotation = (ExcelName) klass.getAnnotation(ExcelName.class);
         builder.append(annotation.attention());
-        if (annotation.OperationLog()){
+        if (annotation.operationLog()){
             DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             // 模拟获取系统获取当前登陆用户信息
             String operationLog = "\n\n导出人：admin    导出时间：" + dateFormatter.format(new Date());

@@ -37,6 +37,46 @@ private String soBianHao;
 private String dnBianHao;
 ```
 
+5. 文件名字：Excel 导出模版下载名称，在实体类上添加 `@ExcelName` 注解即可
+```java
+@ExcelName("提单信息表格")
+public class User {
+    
+}
+```
+
+6. 前缀后缀：在 Excel 文件名添加前缀和后缀，默认为空
+```java
+@ExcelName(value = "用户表", prefix = "PTU", suffix = "学生")
+public class User {
+    
+}
+```
+
+7. 时间格式：Excel 导出文件是否包含导出日期时间，默认开启，可自定义日期时间格式
+```java
+@ExcelName(value = "用户表", dateTimeFormat = "yyyy-MM-dd")
+public class User {
+    
+}
+```
+
+8. 注意事项：Excel 导出首行的备注信息，可以提示用户如何填写数据，默认为 `"红色字段为必填项，黑色字段为可选项，第二行是字段填写注意事项，第三行是字段名"`，可以根据业务需求场景覆盖
+```java
+@ExcelName(value = "用户表", attention = "红色为必填字段")
+public class User { 
+    
+}
+```
+
+9. 操作日志：导出首行备注信息中是否包含导出操作人员用户名以及导出时间，默认开启
+```java
+@ExcelName(value = "用户表", prefix = "PTU", operationLog = false)
+public class User {
+
+}
+```
+
 ##### 处理流程
 1. 通过 @ExcelProperties 注解添加备注和颜色
 2. ExcelCellStyleUtil 用于获取不同单元格的样式  
