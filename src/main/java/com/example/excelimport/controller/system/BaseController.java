@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.Field;
-import java.net.URLEncoder;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -94,9 +93,7 @@ public class BaseController {
         String currentDateTime = dateFormatter.format(new Date());
         // 文件名编码
         String excelFileName = ExcelNameImpl.getExcelFileName(klass);
-//        String filename = "提单信息表 " + currentDateTime + ".xlsx";
-        String filename = URLEncoder.encode(excelFileName, "UTF-8").replace("+", "%20");
-        response.setHeader("Content-Disposition", "attachment; filename*=UTF-8''" + filename);
+        response.setHeader("Content-Disposition", "attachment; filename*=UTF-8''" + excelFileName);
         // MIME
         response.setContentType("application/vnd.ms-excel;");
         // 缓存协议 HTTP 1.0
