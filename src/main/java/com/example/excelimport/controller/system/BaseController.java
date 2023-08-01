@@ -15,9 +15,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.Field;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 public class BaseController {
 
@@ -88,10 +89,7 @@ public class BaseController {
     }
 
     public void downloadExcel(HttpServletResponse response, Class klass) throws IOException {
-        // 时间日期
-        DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String currentDateTime = dateFormatter.format(new Date());
-        // 文件名编码
+        // 生成文件名
         String excelFileName = ExcelNameImpl.getExcelFileName(klass);
         response.setHeader("Content-Disposition", "attachment; filename*=UTF-8''" + excelFileName);
         // MIME
@@ -101,7 +99,7 @@ public class BaseController {
         // 缓存协议 HTTP 1.1
         response.setHeader("Expires", "0");
         response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-        // 导出文件
+        // 生成文件
         Workbook workbook = ExcelGenerateUtil.outputExcel(klass);
         ServletOutputStream outputStream = response.getOutputStream();
         workbook.write(outputStream);
