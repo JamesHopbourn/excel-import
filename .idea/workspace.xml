@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="010b6adf-7411-4f6e-8cc1-cf21c4e4f943" name="变更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/annotation/ColorEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/annotation/ColorEnums.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/controller/system/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/controller/system/BaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/util/ExcelGenerateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/util/ExcelGenerateUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +17,8 @@
       <list>
         <option value="Enum" />
         <option value="AnnotationType" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -198,6 +195,7 @@
       <workItem from="1690880684048" duration="184000" />
       <workItem from="1690881099854" duration="3405000" />
       <workItem from="1690885493655" duration="1336000" />
+      <workItem from="1690893678284" duration="164000" />
     </task>
     <servers />
   </component>
