@@ -22,8 +22,7 @@ public class ExcelNameImpl {
             builder.append(annotation.prefix()).append(" ");
         }
         // 拼接文件名
-        String filename = annotation.value();
-        builder.append(filename).append(" ");
+        builder.append(annotation.value()).append(" ");
         // 拼接时间
         if (annotation.enableDateTime()){
             DateFormat dateFormatter = new SimpleDateFormat(annotation.dateTimeFormat());
