@@ -16,7 +16,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.util.List;
 
 public class ExcelGenerateUtil {
-    public static Workbook outputExcel(Class klass){
+    public static Workbook outputExcel(Class klass) {
         XSSFWorkbook workbook = new XSSFWorkbook();
         CellStyle descriptionStyle = ExcelCellStyleUtil.getDescriptionStyle(workbook);
 
@@ -37,12 +37,12 @@ public class ExcelGenerateUtil {
         String attentionNote = ExcelNameImpl.getAttentionNote(klass);
         headRowCell.setCellValue(attentionNote);
         // 合并与字段等宽的单元格
-        sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, excelFieldList.size()-1));
+        sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, excelFieldList.size() - 1));
         // row0 填写 description，row1 填写字段名
         Row rowDescription = sheet.createRow(1);
         Row rowField = sheet.createRow(2);
         // 两行基本样式配置
-        rowField.setHeight((short) 400);
+        rowField.setHeight(ExcelConstant.FIELD_ROW_FONT_HEIGHT_IN_POINTS);
         for (int i = 0; i < excelFieldList.size(); i++) {
             // 字段描述信息
             Cell cellAttention = rowDescription.createCell(i);
@@ -54,14 +54,14 @@ public class ExcelGenerateUtil {
             // 文字颜色
             ExcelField excelField = excelFieldList.get(i);
             // 有 @Excel 但是没有 @ExcelProperties 注解的获取 Color 会 NPE，此处需要设置一个默认黑色
-            if (excelField.getColor() == null){
+            if (excelField.getColor() == null) {
                 excelField.setColor(ColorEnums.BLACK);
             }
             CellStyle cellStyle = excelField.getColor().getCellStyle(workbook, excelFieldList.get(i));
             cell.setCellStyle(cellStyle);
             // 单元格宽度
             Integer length = excelFieldList.get(i).getLength();
-            if (length != null){
+            if (length != null) {
                 sheet.setColumnWidth(i, 256 * length);
             }
         }
