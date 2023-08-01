@@ -26,8 +26,7 @@ public class ExcelNameImpl {
         // 拼接时间
         if (annotation.enableDateTime()){
             DateFormat dateFormatter = new SimpleDateFormat(annotation.dateTimeFormat());
-            String currentDateTime = dateFormatter.format(new Date());
-            builder.append(currentDateTime);
+            builder.append(dateFormatter.format(new Date()));
         }
         // 拼接后缀
         if (!StringUtils.isEmpty(annotation.suffix())){
