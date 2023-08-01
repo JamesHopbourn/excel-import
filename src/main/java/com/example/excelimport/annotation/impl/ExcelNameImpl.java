@@ -16,7 +16,7 @@ public class ExcelNameImpl {
         // 获取文件名注解
         ExcelName annotation = (ExcelName) klass.getAnnotation(ExcelName.class);
         // StringBuilder 拼接文件名
-        StringBuilder builder = new StringBuilder();
+        StringBuilder builder = new StringBuilder("attachment; filename*=UTF-8''");
         // 拼接前缀
         if (!StringUtils.isEmpty(annotation.prefix())){
             builder.append(annotation.prefix()).append(" ");

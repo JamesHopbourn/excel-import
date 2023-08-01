@@ -92,6 +92,11 @@ public class BaseController {
         // 生成文件名
         String excelFileName = ExcelNameImpl.getExcelFileName(klass);
         response.setHeader("Content-Disposition", excelFileName);
+<<<<<<< HEAD
+=======
+        // MIME
+        response.setContentType("application/vnd.ms-excel;");
+>>>>>>> refs/remotes/origin/master
         // 缓存协议 HTTP 1.0
         response.setHeader("Pragma", "no-cache");
         // 缓存协议 HTTP 1.1
