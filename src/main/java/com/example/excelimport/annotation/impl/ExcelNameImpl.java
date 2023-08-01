@@ -26,12 +26,12 @@ public class ExcelNameImpl {
         if (annotation.enableDateTime()){
             DateFormat dateFormatter = new SimpleDateFormat(annotation.dateTimeFormat());
             String currentDateTime = dateFormatter.format(new Date());
-            builder.append(currentDateTime).append(" ");
+            builder.append(currentDateTime);
         }
         // 拼接后缀
         if (!StringUtils.isEmpty(annotation.suffix())){
             builder.append(annotation.suffix());
         }
-        return builder.toString();
+        return builder.append(".xlsx").toString();
     }
 }
