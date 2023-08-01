@@ -2,9 +2,10 @@ package com.example.excelimport.controller.system;
 
 import cn.afterturn.easypoi.excel.ExcelImportUtil;
 import cn.afterturn.easypoi.excel.entity.ImportParams;
+import cn.hutool.core.util.ReflectUtil;
+import com.example.excelimport.annotation.impl.ExcelNameImpl;
 import com.example.excelimport.annotation.impl.ExcelPropertiesImpl;
 import com.example.excelimport.util.ExcelGenerateUtil;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -17,12 +18,21 @@ import java.lang.reflect.Field;
 import java.net.URLEncoder;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class BaseController {
+
+    public static Field[] getAllFields(Class clazz) {
+        List<Field> fieldList = new ArrayList<>();
+        while (clazz != null) {
+            fieldList.addAll(new ArrayList<>(Arrays.asList(clazz.getDeclaredFields())));
+            clazz = clazz.getSuperclass();
+        }
+        Field[] fields = new Field[fieldList.size()];
+        fieldList.toArray(fields);
+        return fields;
+    }
+
     public <T> void importExcelData(HttpServletRequest request, HttpServletResponse response, Class klass) throws Exception {
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         Map<String, MultipartFile> fileMap = multipartRequest.getFileMap();
@@ -42,27 +52,40 @@ public class BaseController {
             response.getWriter().println("空数据！");
         }
 
-        System.out.println("原始数据元素：" + list.size());
+        // 过滤唯一字段
+        List<String> uniqueField = ExcelPropertiesImpl.getUniqueField(list, klass);
+        System.out.println("uniqueField = " + uniqueField);
+
+        // 获取所有字段
+        Field[] allFields = getAllFields(klass);
         // 获取所有必填字段
         List<String> allRequireField = ExcelPropertiesImpl.getAllRequireField(klass);
-        // 使用迭代器删除必填字段包含 null 的数据行
-        Iterator<T> iterator = list.iterator();
-        while (iterator.hasNext()) {
-            T next = iterator.next();
-            Class<?> aClass = next.getClass();
-            for (String requireField : allRequireField) {
-                Field field = aClass.getDeclaredField(requireField);
-                // 必须设置 Accessible = true 允许访问私有属性，否则执行下面这行会报错：
-                // can not access a member XXX with modifiers "private"
+        // 所有需要保存的数据行 == 保存成功的数据列表（如果业务场景需要，可用使用）
+        List<T> rowNeedToSave = new ArrayList<>();
+        // 必填字段缺失的数据列表（如果业务场景需要，可用使用）
+        List<T> rowMissingRequiredFieldList = new ArrayList<>();
+        // 遍历所有数据行
+
+        for (T row : list) {
+            boolean doSave = true;
+            for (Field field : allFields) {
                 field.setAccessible(true);
-                if (StringUtils.isEmpty((CharSequence) field.get(next))) {
-                    System.out.println(iterator);
-                    iterator.remove();
+                // 判断是否存在必填项未填写的单元格
+                if (allRequireField.contains(field.getName()) && ReflectUtil.getFieldValue(row, field.getName()) == null){
+                    rowMissingRequiredFieldList.add(row);
+                    doSave = false;
+                    break;
                 }
+                /*
+                下面开始写其他的处理逻辑，例如 ES 数据类型转换
+                 */
+            }
+            // 最后如果 doSave 为 true 就把这行数据添加到 rowNeedToSave
+            if (doSave){
+                rowNeedToSave.add(row);
             }
         }
-
-//        list.forEach(System.out::println);
+        rowNeedToSave.forEach(System.out::println);
     }
 
     public void downloadExcel(HttpServletResponse response, Class klass) throws IOException {
@@ -70,8 +93,9 @@ public class BaseController {
         DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String currentDateTime = dateFormatter.format(new Date());
         // 文件名编码
-        String filename = "提单信息表 " + currentDateTime + ".xlsx";
-        filename = URLEncoder.encode(filename, "UTF-8").replace("+", "%20");
+        String excelFileName = ExcelNameImpl.getExcelFileName(klass);
+//        String filename = "提单信息表 " + currentDateTime + ".xlsx";
+        String filename = URLEncoder.encode(excelFileName, "UTF-8").replace("+", "%20");
         response.setHeader("Content-Disposition", "attachment; filename*=UTF-8''" + filename);
         // MIME
         response.setContentType("application/vnd.ms-excel;");

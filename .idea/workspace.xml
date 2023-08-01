@@ -4,7 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="010b6adf-7411-4f6e-8cc1-cf21c4e4f943" name="变更" comment="" />
+    <list default="true" id="010b6adf-7411-4f6e-8cc1-cf21c4e4f943" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_2_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_spring_boot_starter_1_2_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_3_5_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_annotation_3_5_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_boot_starter_3_5_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_core_3_5_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_extension_3_5_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mysql_mysql_connector_j_8_0_31.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_4_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_6_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_3_23.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_3_23.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/annotation/impl/ExcelNameImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/excelimport/annotation/impl/ExcelNameImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/excelimport/mapper/UserMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/excel-import.iml" beforeDir="false" afterPath="$PROJECT_DIR$/excel-import.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/annotation/ExcelName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/annotation/ExcelName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/annotation/ExcelProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/annotation/ExcelProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/annotation/impl/ExcelPropertiesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/annotation/impl/ExcelPropertiesImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/controller/system/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/controller/system/BaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/entity/TiDanXinXi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/entity/TiDanXinXi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/excelimport/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/excelimport/entity/User.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,10 +43,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Enum" />
         <option value="AnnotationType" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -47,10 +77,14 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="模块" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="trusted.hosts" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -59,23 +93,12 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.excelimport.annotation.impl" />
+      <recent name="com.example.excelimport.mapper" />
       <recent name="com.example.excelimport.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ExcelGenerate.getAllField">
-    <configuration name="UserTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.excelimport.entity.UserTest" />
-      <module name="excel-import" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.excelimport.entity.system.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.ExcelImportApplication">
     <configuration name="ExcelGenerate.getAllField" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="excel-import" />
       <extension name="coverage">
@@ -92,17 +115,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExcelGenerate.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ExcelNameImplTest.getValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="excel-import" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.excelimport.entity.system.*" />
+          <option name="PATTERN" value="com.example.excelimport.annotation.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.excelimport.entity" />
-      <option name="MAIN_CLASS_NAME" value="com.example.excelimport.entity.ExcelGenerate" />
-      <option name="METHOD_NAME" value="test2" />
+      <option name="PACKAGE_NAME" value="com.example.excelimport.annotation.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.example.excelimport.annotation.impl.ExcelNameImplTest" />
+      <option name="METHOD_NAME" value="getValue" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -124,6 +147,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserMapperTest.selectByField" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="excel-import" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.excelimport.mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.excelimport.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.example.excelimport.mapper.UserMapperTest" />
+      <option name="METHOD_NAME" value="selectByField" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ExcelImportApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="excel-import" />
       <extension name="coverage">
@@ -139,11 +178,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ExcelGenerate.getAllField" />
         <item itemvalue="Spring Boot.ExcelImportApplication" />
+        <item itemvalue="JUnit.ExcelNameImplTest.getValue" />
+        <item itemvalue="JUnit.UserMapperTest.selectByField" />
+        <item itemvalue="JUnit.ExcelGenerate.getAllField" />
         <item itemvalue="JUnit.GetField.get" />
-        <item itemvalue="JUnit.ExcelGenerate.test2" />
-        <item itemvalue="应用程序.UserTest" />
       </list>
     </recent_temporary>
   </component>
@@ -168,6 +207,22 @@
       <workItem from="1690385472390" duration="916000" />
       <workItem from="1690419157148" duration="12109000" />
       <workItem from="1690436522366" duration="2291000" />
+      <workItem from="1690439076797" duration="1284000" />
+      <workItem from="1690441498464" duration="560000" />
+      <workItem from="1690529513935" duration="85000" />
+      <workItem from="1690766392266" duration="1143000" />
+      <workItem from="1690815099423" duration="999000" />
+      <workItem from="1690816273307" duration="1356000" />
+      <workItem from="1690856246366" duration="159000" />
+      <workItem from="1690859088095" duration="982000" />
+      <workItem from="1690869501382" duration="607000" />
+      <workItem from="1690870521893" duration="4525000" />
+      <workItem from="1690877984678" duration="402000" />
+      <workItem from="1690878680642" duration="316000" />
+      <workItem from="1690879034342" duration="113000" />
+      <workItem from="1690880684048" duration="184000" />
+      <workItem from="1690881099854" duration="3405000" />
+      <workItem from="1690885493655" duration="1336000" />
     </task>
     <servers />
   </component>

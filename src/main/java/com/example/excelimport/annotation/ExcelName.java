@@ -1,8 +1,15 @@
 package com.example.excelimport.annotation;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
 /**
  * @author James Hopbourn
  */
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
 public @interface ExcelName {
     /**
      * 文件名称
@@ -47,5 +54,5 @@ public @interface ExcelName {
      * 文件名后缀
      * @return
      */
-    String endfix() default "";
+    String suffix() default "";
 }

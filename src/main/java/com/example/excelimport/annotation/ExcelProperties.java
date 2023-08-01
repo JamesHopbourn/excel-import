@@ -23,4 +23,10 @@ public @interface ExcelProperties {
      * @return description
      */
     String description() default "";
+
+    /**
+     * 是不是唯一标识符，用来区分导入还是更新
+     * @return
+     */
+    boolean uniqueField() default false;
 }

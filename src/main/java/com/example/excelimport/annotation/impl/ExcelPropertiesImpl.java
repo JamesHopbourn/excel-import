@@ -38,11 +38,38 @@ public class ExcelPropertiesImpl {
         return requireFieldList;
     }
 
+    /**
+     * 获取所有唯一属性字段
+     * @param klass 传入的实体类
+     * @return requireFieldList 实体类必填字段
+     */
+    public static <T> List<String> getUniqueField(List<T> originList, Class<?> klass){
+        Field[] declaredFields = klass.getDeclaredFields();
+        Class<ExcelProperties> excelPropertiesClass = ExcelProperties.class;
+        String excelPropertiesCanonicalName = excelPropertiesClass.getCanonicalName();
+        List<String> uniqueFieldList = new ArrayList<>();
+        for (Field declaredField : declaredFields) {
+            Annotation[] declaredAnnotations = declaredField.getDeclaredAnnotations();
+            for (Annotation declaredAnnotation : declaredAnnotations) {
+                // 找出所有带有 @ExcelProperties 注解并且 uniqueField == true 的字段
+                if (declaredAnnotation.annotationType().getName().equals(excelPropertiesCanonicalName)){
+                    ExcelProperties annotation = declaredField.getAnnotation(ExcelProperties.class);
+                    if (annotation.uniqueField()) {
+                        uniqueFieldList.add(declaredField.getName());
+                    }
+                    break;
+                }
+            }
+        }
+        return uniqueFieldList;
+    }
+
     public static List<ExcelField> allField(Class<?> klass) {
         String excelAnnotationCanonicalName = Excel.class.getCanonicalName();
         String excelPropertiesCanonicalName = ExcelProperties.class.getCanonicalName();
         Field[] declaredFields = klass.getDeclaredFields();
         List<ExcelField> excelFieldList = new ArrayList<>();
+        List<String> requireField = new ArrayList<>();
         for (Field declaredField : declaredFields) {
             // 创建 POJO
             ExcelField excelField = new ExcelField();
@@ -51,6 +78,8 @@ public class ExcelPropertiesImpl {
             for (Annotation declaredAnnotation : declaredAnnotations) {
                 // 处理 @ExcelProperties 注解
                 if (declaredAnnotation.annotationType().getName().equals(excelPropertiesCanonicalName)){
+                    
+                    requireField.add(String.valueOf(declaredField));
                     ExcelProperties annotation = declaredField.getAnnotation(ExcelProperties.class);
                     ColorEnums colorCode = annotation.value();
                     excelField.setDescription(annotation.description());
@@ -74,6 +103,7 @@ public class ExcelPropertiesImpl {
         List<ExcelField> sortedExcelFieldList = excelFieldList.stream()
                 .sorted(Comparator.comparingInt(o -> Integer.parseInt(o.getOrderNum())))
                 .collect(Collectors.toList());
+        System.out.println("必填字段列表：" + requireField);
         return sortedExcelFieldList;
     }
 }
