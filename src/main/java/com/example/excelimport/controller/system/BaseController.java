@@ -42,8 +42,8 @@ public class BaseController {
         for (Map.Entry<String, MultipartFile> entity : fileMap.entrySet()) {
             MultipartFile file = entity.getValue();
             ImportParams params = new ImportParams();
-            params.setTitleRows(ExcelConstant.titleRows);
-            params.setHeadRows(ExcelConstant.headRows);
+            params.setTitleRows(ExcelConstant.TITLE_ROWS);
+            params.setHeadRows(ExcelConstant.HEAD_ROWS);
             params.setNeedSave(false);
             list = ExcelImportUtil.importExcel(file.getInputStream(), klass, params);
         }

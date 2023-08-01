@@ -15,7 +15,7 @@ import java.io.IOException;
 @RequestMapping("tidanxinxi")
 public class TiDanXinXiController extends BaseController {
     @PostMapping("importExcel")
-    public void importEx(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public void importExcel(HttpServletRequest request, HttpServletResponse response) throws Exception {
         super.importExcelData(request, response, TiDanXinXi.class);
     }
 
