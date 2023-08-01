@@ -20,7 +20,7 @@ public class ExcelGenerateUtil {
         XSSFWorkbook workbook = new XSSFWorkbook();
         CellStyle descriptionStyle = ExcelCellStyleUtil.getDescriptionStyle(workbook);
 
-        // 第二行考虑使用 for 循环处理
+        // 第三行使用 for 循环处理
         List<ExcelField> excelFieldList = ExcelPropertiesImpl.allField(klass);
         // 创建 Sheet
         XSSFSheet sheet = workbook.createSheet("Sheet1");
