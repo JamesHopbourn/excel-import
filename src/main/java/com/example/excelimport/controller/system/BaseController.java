@@ -3,6 +3,7 @@ package com.example.excelimport.controller.system;
 import cn.afterturn.easypoi.excel.ExcelImportUtil;
 import cn.afterturn.easypoi.excel.entity.ImportParams;
 import cn.hutool.core.util.ReflectUtil;
+import com.example.excelimport.annotation.ExcelConstant;
 import com.example.excelimport.annotation.impl.ExcelNameImpl;
 import com.example.excelimport.annotation.impl.ExcelPropertiesImpl;
 import com.example.excelimport.util.ExcelGenerateUtil;
@@ -41,8 +42,8 @@ public class BaseController {
         for (Map.Entry<String, MultipartFile> entity : fileMap.entrySet()) {
             MultipartFile file = entity.getValue();
             ImportParams params = new ImportParams();
-            params.setTitleRows(1);
-            params.setHeadRows(1);
+            params.setTitleRows(ExcelConstant.titleRows);
+            params.setHeadRows(ExcelConstant.headRows);
             params.setNeedSave(false);
             list = ExcelImportUtil.importExcel(file.getInputStream(), klass, params);
         }
@@ -65,7 +66,6 @@ public class BaseController {
         // 必填字段缺失的数据列表（如果业务场景需要，可用使用）
         List<T> rowMissingRequiredFieldList = new ArrayList<>();
         // 遍历所有数据行
-
         for (T row : list) {
             boolean doSave = true;
             for (Field field : allFields) {

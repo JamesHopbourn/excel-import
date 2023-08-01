@@ -17,17 +17,12 @@ import static com.example.excelimport.util.ExcelCellStyleUtil.*;
 public class ExcelGenerateUtil {
     public static Workbook outputExcel(Class klass){
         XSSFWorkbook workbook = new XSSFWorkbook();
-
         CellStyle descriptionStyle = getDescriptionStyle(workbook);
-        CellStyle normalStyle = getNormalStyle(workbook);
-        CellStyle requireStyle = getRequireStyle(workbook);
 
         // 第二行考虑使用 for 循环处理
         List<ExcelField> excelFieldList = ExcelPropertiesImpl.allField(klass);
-
         // 创建 Sheet
         XSSFSheet sheet = workbook.createSheet("Sheet1");
-
         // row0 填写 description，row1 填写字段名
         Row row0 = sheet.createRow(0);
         Row row1 = sheet.createRow(1);
@@ -42,12 +37,9 @@ public class ExcelGenerateUtil {
             Cell cell = row1.createCell(i);
             cell.setCellValue(excelFieldList.get(i).getName());
             // 文字颜色
-            ColorEnums value = excelFieldList.get(i).getColor();
-            if (value == ColorEnums.RED){
-                cell.setCellStyle(requireStyle);
-            } else {
-                cell.setCellStyle(normalStyle);
-            }
+            ColorEnums color = excelFieldList.get(i).getColor();
+            CellStyle cellStyle = color.getCellStyle(workbook, excelFieldList.get(i));
+            cell.setCellStyle(cellStyle);
             // 单元格宽度
             Integer length = excelFieldList.get(i).getLength();
             if (length != null){
