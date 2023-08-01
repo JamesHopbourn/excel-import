@@ -39,17 +39,17 @@ public class ExcelGenerateUtil {
         // 合并与字段等宽的单元格
         sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, excelFieldList.size()-1));
         // row0 填写 description，row1 填写字段名
-        Row row0 = sheet.createRow(1);
-        Row row1 = sheet.createRow(2);
+        Row rowDescription = sheet.createRow(1);
+        Row rowField = sheet.createRow(2);
         // 两行基本样式配置
-        row1.setHeight((short) 400);
+        rowField.setHeight((short) 400);
         for (int i = 0; i < excelFieldList.size(); i++) {
             // 字段描述信息
-            Cell cellAttention = row0.createCell(i);
+            Cell cellAttention = rowDescription.createCell(i);
             cellAttention.setCellValue(excelFieldList.get(i).getDescription());
             cellAttention.setCellStyle(descriptionStyle);
             // 单元格文字
-            Cell cell = row1.createCell(i);
+            Cell cell = rowField.createCell(i);
             cell.setCellValue(excelFieldList.get(i).getName());
             // 文字颜色
             ExcelField excelField = excelFieldList.get(i);
