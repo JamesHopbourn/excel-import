@@ -1,5 +1,6 @@
 package com.example.excelimport.annotation.excel.util;
 
+import com.example.excelimport.annotation.excel.pojo.ExcelConstant;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -12,9 +13,9 @@ public class ExcelCellStyleUtil {
     public static CellStyle getDescriptionStyle(XSSFWorkbook workbook){
         // Attention 的字体设置
         Font descriptionFont = workbook.createFont();
-        descriptionFont.setFontName("宋体");
+        descriptionFont.setFontName(ExcelConstant.FONT_NAME);
         descriptionFont.setColor(IndexedColors.RED.getIndex());
-        descriptionFont.setFontHeightInPoints((short) 12);
+        descriptionFont.setFontHeightInPoints(ExcelConstant.FONT_HEIGHT_IN_POINTS);
         // Attention 的单元格样式设置
         CellStyle descriptionCellStyle = workbook.createCellStyle();
         descriptionCellStyle.setAlignment(HorizontalAlignment.CENTER);
@@ -32,9 +33,9 @@ public class ExcelCellStyleUtil {
      */
     public static CellStyle getNormalStyle(XSSFWorkbook workbook){
         Font requireFieldFont = workbook.createFont();
-        requireFieldFont.setFontName("宋体");
+        requireFieldFont.setFontName(ExcelConstant.FONT_NAME);
         requireFieldFont.setColor(IndexedColors.BLACK.getIndex());
-        requireFieldFont.setFontHeightInPoints((short) 12);
+        requireFieldFont.setFontHeightInPoints(ExcelConstant.FONT_HEIGHT_IN_POINTS);
         // 必填单元格样式设置
         CellStyle requireCellStyle = workbook.createCellStyle();
         requireCellStyle.setFont(requireFieldFont);
@@ -51,9 +52,9 @@ public class ExcelCellStyleUtil {
      */
     public static CellStyle getRequireStyle(XSSFWorkbook workbook){
         Font requireFieldFont = workbook.createFont();
-        requireFieldFont.setFontName("宋体");
+        requireFieldFont.setFontName(ExcelConstant.FONT_NAME);
         requireFieldFont.setColor(IndexedColors.RED.getIndex());
-        requireFieldFont.setFontHeightInPoints((short) 12);
+        requireFieldFont.setFontHeightInPoints(ExcelConstant.FONT_HEIGHT_IN_POINTS);
         // 必填单元格样式设置
         CellStyle requireCellStyle = workbook.createCellStyle();
         requireCellStyle.setFont(requireFieldFont);
