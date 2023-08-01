@@ -38,10 +38,10 @@ public class ExcelGenerateUtil {
         headRowCell.setCellValue(attentionNote);
         // 合并与字段等宽的单元格
         sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, excelFieldList.size() - 1));
-        // row0 填写 description，row1 填写字段名
+        // rowDescription 填写 description，rowField 填写字段名
         Row rowDescription = sheet.createRow(1);
         Row rowField = sheet.createRow(2);
-        // 两行基本样式配置
+        // rowField 字段行单元格高度样式配置
         rowField.setHeight(ExcelConstant.FIELD_ROW_FONT_HEIGHT_IN_POINTS);
         for (int i = 0; i < excelFieldList.size(); i++) {
             // 字段描述信息
@@ -51,12 +51,13 @@ public class ExcelGenerateUtil {
             // 单元格文字
             Cell cell = rowField.createCell(i);
             cell.setCellValue(excelFieldList.get(i).getName());
-            // 文字颜色
+            // 单元格文字颜色
             ExcelField excelField = excelFieldList.get(i);
-            // 有 @Excel 但是没有 @ExcelProperties 注解的获取 Color 会 NPE，此处需要设置一个默认黑色
+            // 有 @Excel 注解但是没有 @ExcelProperties 注解的获取 color 会报 NPE，需要设置一个默认黑色
             if (excelField.getColor() == null) {
                 excelField.setColor(ColorEnums.BLACK);
             }
+            // 通过获取注解上 color 属性，访问 ColorEnums 枚举类的构造方法，返回颜色对应的单元格样式
             CellStyle cellStyle = excelField.getColor().getCellStyle(workbook, excelFieldList.get(i));
             cell.setCellStyle(cellStyle);
             // 单元格宽度

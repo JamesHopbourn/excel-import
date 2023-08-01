@@ -34,10 +34,14 @@ public class TiDanXinXi extends TatiumEntity {
     /**
      * SO编号
      */
+    @ExcelProperties(description = "红色字段为初始必填项目")
+    @Excel(name = "SO编号", width = 30, orderNum = "2")
     private String soBianHao;
     /**
      * DN编号
      */
+    @ExcelProperties(description = "多次更新导入时作为唯一匹配号")
+    @Excel(name = "DN编号", width = 30, orderNum = "3")
     private String dnBianHao;
     /**
      * 客户名称

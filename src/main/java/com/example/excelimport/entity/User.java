@@ -9,6 +9,8 @@ import lombok.Data;
 @Data
 @ExcelName(value = "用户表", prefix = "PTU")
 public class User {
+    private String id;
+    
     @ExcelProperties(uniqueField = true)
     @Excel(name = "用户名")
     private String name;
