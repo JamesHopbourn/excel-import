@@ -4,10 +4,12 @@ import cn.afterturn.easypoi.excel.annotation.Excel;
 import com.example.excelimport.annotation.excel.pojo.ColorEnums;
 import com.example.excelimport.annotation.excel.ExcelName;
 import com.example.excelimport.annotation.excel.ExcelProperties;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
-@ExcelName(value = "用户表", prefix = "PTU")
+@Builder
+@ExcelName(value = "用户表", prefix = "PTU", attentionNote = "红色为必填字段\n黑色为可选字段")
 public class User {
     private String id;
     
