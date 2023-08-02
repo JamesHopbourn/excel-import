@@ -24,9 +24,8 @@ public class ExcelGenerateUtil {
         List<ExcelField> excelFieldList = ExcelPropertiesImpl.allField(klass);
         // 创建 Sheet
         XSSFSheet sheet = workbook.createSheet("Sheet1");
-        // 首行注意事项
+        // 创建首行注意事项
         Row headRow = sheet.createRow(0);
-        headRow.setHeight(ExcelConstant.HEAD_ROW_FONT_HEIGHT_IN_POINTS);
         // 开启首行换行
         CellStyle headRowStyle = workbook.createCellStyle();
         headRowStyle.setWrapText(true);
@@ -36,6 +35,9 @@ public class ExcelGenerateUtil {
         // 获取注意事项等备注信息
         String attentionNote = ExcelNameImpl.getAttentionNote(klass);
         headRowCell.setCellValue(attentionNote);
+        // 根据注意事项文段行数自动调整高度
+        int lineNumberOfAttentionNote = attentionNote.split("\n").length;
+        headRow.setHeight((short) (ExcelConstant.HEAD_ROW_FONT_HEIGHT_IN_POINTS * lineNumberOfAttentionNote));
         // 合并与字段等宽的单元格
         sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, excelFieldList.size() - 1));
         // rowDescription 填写 description，rowField 填写字段名
