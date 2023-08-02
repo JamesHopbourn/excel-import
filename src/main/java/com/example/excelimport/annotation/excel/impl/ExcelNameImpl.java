@@ -40,7 +40,7 @@ public class ExcelNameImpl {
     public static String getAttentionNote(Class klass){
         StringBuilder builder = new StringBuilder();
         ExcelName annotation = (ExcelName) klass.getAnnotation(ExcelName.class);
-        builder.append(annotation.attention());
+        builder.append(annotation.attentionNote());
         if (annotation.operationLog()){
             DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             // 模拟获取系统获取当前登陆用户信息

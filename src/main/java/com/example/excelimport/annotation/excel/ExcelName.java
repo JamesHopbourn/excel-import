@@ -21,7 +21,7 @@ public @interface ExcelName {
      * 首行：注意事项
      * @return
      */
-    String attention() default "红色字段为必填项，黑色字段为可选项，第二行是字段填写注意事项，第三行是字段名";
+    String attentionNote() default "红色字段为必填项，黑色字段为可选项，第二行是字段填写注意事项，第三行是字段名";
 
     /**
      * 首行：添加导出操作人导出和时间，默认开启
