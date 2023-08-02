@@ -22,7 +22,7 @@ private String soBianHao;
 private String chuanSiDaiMa;
 ```
 
-4. 字段排序：配置 `@Excel` orderNum 属性即可，ExcelPropertiesImpl 会读取值并按照配置生成 Excel
+4. 字段排序：配置 `@Excel` orderNum 属性即可，[ExcelPropertiesImpl](https://github.com/JamesHopbourn/excel-import/blob/master/src/main/java/com/example/excelimport/annotation/excel/impl/ExcelPropertiesImpl.java#L90-L92) 会读取值并按照配置生成 Excel
 ```java
 @ExcelProperties(description = "箱货跟踪时必填")
 @Excel(name = "提单号", width = 20, orderNum = "1")
