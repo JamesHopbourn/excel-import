@@ -3,11 +3,15 @@ package com.example.excelimport.controller.system;
 import cn.afterturn.easypoi.excel.ExcelImportUtil;
 import cn.afterturn.easypoi.excel.entity.ImportParams;
 import cn.hutool.core.util.ReflectUtil;
-import com.example.excelimport.annotation.excel.pojo.ExcelConstant;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.excelimport.annotation.excel.impl.ExcelNameImpl;
 import com.example.excelimport.annotation.excel.impl.ExcelPropertiesImpl;
+import com.example.excelimport.annotation.excel.pojo.ExcelConstant;
 import com.example.excelimport.annotation.excel.util.ExcelGenerateUtil;
+import com.google.common.base.CaseFormat;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -21,7 +25,16 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-public class BaseController {
+public class BaseController<T, S extends IService<T>>{
+    @Autowired
+    S service;
+
+    public List<T> getDatabaseExistData(List<String> uniqueFieldList){
+        QueryWrapper<T> queryWrapper = new QueryWrapper<>();
+        // TODO 目前只支持一个 key 的标记，以后根据业务场景可能需要支持多个 key
+        queryWrapper.select(CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, uniqueFieldList.get(0)));
+        return service.list(queryWrapper);
+    }
 
     public static Field[] getAllFields(Class klass) {
         List<Field> fieldList = new ArrayList<>();
@@ -34,7 +47,7 @@ public class BaseController {
         return fields;
     }
 
-    public <T> void importExcelData(HttpServletRequest request, HttpServletResponse response, Class klass) throws Exception {
+    public void importExcelData(HttpServletRequest request, HttpServletResponse response, Class klass) throws Exception {
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         Map<String, MultipartFile> fileMap = multipartRequest.getFileMap();
 
@@ -55,21 +68,34 @@ public class BaseController {
 
         // 过滤唯一字段
         List<String> uniqueField = ExcelPropertiesImpl.getUniqueField(list, klass);
-        System.out.println("uniqueField = " + uniqueField);
-
+        // 获取数据库里已保存的字段
+        List<T> databaseExistList = getDatabaseExistData(uniqueField);
+        // 必填字段缺失的数据列表（如果业务场景需要，可用使用）
+        List<T> rowMissingRequiredFieldList = new ArrayList<>();
         // 获取所有字段
         Field[] allFields = getAllFields(klass);
         // 获取所有必填字段
         List<String> allRequireField = ExcelPropertiesImpl.getAllRequireField(klass);
         // 所有需要保存的数据行 == 保存成功的数据列表（如果业务场景需要，可用使用）
         List<T> rowNeedToSave = new ArrayList<>();
-        // 必填字段缺失的数据列表（如果业务场景需要，可用使用）
-        List<T> rowMissingRequiredFieldList = new ArrayList<>();
         // 遍历所有数据行
         for (T row : list) {
             boolean doSave = true;
             for (Field field : allFields) {
                 field.setAccessible(true);
+                // 获取唯一标记符号
+                String name = field.getName();
+                // 判断数据库中是否存在唯一标识符号
+                if (uniqueField.contains(name)){
+                    Object fieldValue = ReflectUtil.getFieldValue(row, field.getName());
+                    for (T t : databaseExistList) {
+                        Object databaseValue = ReflectUtil.getFieldValue(t, field.getName());
+                        if (fieldValue.equals(databaseValue)){
+                            doSave = false;
+                            rowMissingRequiredFieldList.add(row);
+                        }
+                    }
+                }
                 // 判断是否存在必填项未填写的单元格
                 if (allRequireField.contains(field.getName()) && ReflectUtil.getFieldValue(row, field.getName()) == null){
                     rowMissingRequiredFieldList.add(row);
@@ -85,6 +111,7 @@ public class BaseController {
                 rowNeedToSave.add(row);
             }
         }
+        System.out.println("需要插入数据库的列表如下：");
         rowNeedToSave.forEach(System.out::println);
     }
 

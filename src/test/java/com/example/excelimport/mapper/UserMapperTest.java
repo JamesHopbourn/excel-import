@@ -1,5 +1,6 @@
 package com.example.excelimport.mapper;
 
+import com.example.excelimport.controller.UserController;
 import com.example.excelimport.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,7 +15,15 @@ import java.util.stream.Collectors;
 class UserMapperTest {
     @Resource
     private UserMapper userMapper;
+    @Resource
+    private UserController controller;
 
+    @Test
+    void generice(){
+//        List test = controller.getDatabaseExistData();
+//        System.out.println("test = " + test);
+    }
+    
     @Test
     void selectByField(){
 
