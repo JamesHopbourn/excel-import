@@ -2,12 +2,9 @@ package com.example.excelimport.controller.system;
 
 import cn.afterturn.easypoi.excel.ExcelImportUtil;
 import cn.afterturn.easypoi.excel.entity.ImportParams;
-import cn.hutool.core.util.ReflectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.excelimport.annotation.excel.impl.ExcelNameImpl;
-import com.example.excelimport.annotation.excel.impl.ExcelPropertiesImpl;
-import com.example.excelimport.annotation.excel.pojo.ExcelConstant;
 import com.example.excelimport.annotation.excel.util.ExcelGenerateUtil;
 import com.google.common.base.CaseFormat;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -26,6 +23,7 @@ import java.util.List;
 import java.util.Map;
 
 public class BaseController<T, S extends IService<T>>{
+    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     S service;
 
@@ -55,64 +53,13 @@ public class BaseController<T, S extends IService<T>>{
         for (Map.Entry<String, MultipartFile> entity : fileMap.entrySet()) {
             MultipartFile file = entity.getValue();
             ImportParams params = new ImportParams();
-            params.setTitleRows(ExcelConstant.TITLE_ROWS);
-            params.setHeadRows(ExcelConstant.HEAD_ROWS);
+            params.setTitleRows(1);
+            params.setHeadRows(1);
             params.setNeedSave(false);
             list = ExcelImportUtil.importExcel(file.getInputStream(), klass, params);
         }
+        System.out.println(list);
 
-        // 异常提前返回
-        if (list == null) {
-            response.getWriter().println("空数据！");
-        }
-
-        // 过滤唯一字段
-        List<String> uniqueField = ExcelPropertiesImpl.getUniqueField(list, klass);
-        // 获取数据库里已保存的字段
-        List<T> databaseExistList = getDatabaseExistData(uniqueField);
-        // 必填字段缺失的数据列表（如果业务场景需要，可用使用）
-        List<T> rowMissingRequiredFieldList = new ArrayList<>();
-        // 获取所有字段
-        Field[] allFields = getAllFields(klass);
-        // 获取所有必填字段
-        List<String> allRequireField = ExcelPropertiesImpl.getAllRequireField(klass);
-        // 所有需要保存的数据行 == 保存成功的数据列表（如果业务场景需要，可用使用）
-        List<T> rowNeedToSave = new ArrayList<>();
-        // 遍历所有数据行
-        for (T row : list) {
-            boolean doSave = true;
-            for (Field field : allFields) {
-                field.setAccessible(true);
-                // 获取唯一标记符号
-                String name = field.getName();
-                // 判断数据库中是否存在唯一标识符号
-                if (uniqueField.contains(name)){
-                    Object fieldValue = ReflectUtil.getFieldValue(row, field.getName());
-                    for (T t : databaseExistList) {
-                        Object databaseValue = ReflectUtil.getFieldValue(t, field.getName());
-                        if (fieldValue.equals(databaseValue)){
-                            doSave = false;
-                            rowMissingRequiredFieldList.add(row);
-                        }
-                    }
-                }
-                // 判断是否存在必填项未填写的单元格
-                if (allRequireField.contains(field.getName()) && ReflectUtil.getFieldValue(row, field.getName()) == null){
-                    rowMissingRequiredFieldList.add(row);
-                    doSave = false;
-                    break;
-                }
-                /*
-                下面开始写其他的处理逻辑，例如 ES 数据类型转换
-                 */
-            }
-            // 最后如果 doSave 为 true 就把这行数据添加到 rowNeedToSave
-            if (doSave){
-                rowNeedToSave.add(row);
-            }
-        }
-        System.out.println("需要插入数据库的列表如下：");
-        rowNeedToSave.forEach(System.out::println);
     }
 
     public void downloadExcel(HttpServletResponse response, Class klass) throws IOException {
