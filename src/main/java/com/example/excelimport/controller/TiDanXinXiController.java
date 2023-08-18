@@ -15,6 +15,7 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,6 +40,7 @@ public class TiDanXinXiController extends BaseController {
         exportParams.setStyle(CustomExcelExportStyler.class);
         // 创建表格
         Workbook workbook = ExcelExportUtil.exportExcel(exportParams, TiDanXinXi.class, getUserList());
+
         // 细节调整
         Cell cell = workbook.getSheetAt(0).getRow(1).getCell(0);
         // Attention 的字体设置
@@ -50,6 +52,16 @@ public class TiDanXinXiController extends BaseController {
         descriptionCellStyle.setFont(descriptionFont);
         // 使用配置样式
         cell.setCellStyle(descriptionCellStyle);
+
+        // 生成文件名
+        String excelFilename = "attachment; filename*=UTF-8''" +
+                URLEncoder.encode("错误数据.xlsx", "UTF-8")
+                .replace("+", "%20");
+        response.setHeader("Content-Disposition", excelFilename);
+        // 缓存协议 HTTP 1.1
+        response.setHeader("Expires", "0");
+        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+
         // 输出文件
         ServletOutputStream outputStream = response.getOutputStream();
         workbook.write(outputStream);

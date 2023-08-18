@@ -26,18 +26,4 @@ public class CustomExcelExportStyler extends ExcelExportStylerDefaultImpl {
         headerStyle.setAlignment(HorizontalAlignment.LEFT);
         return headerStyle;
     }
-    
-    @Override
-    public CellStyle getTitleStyle(short color) {
-        Font requireFieldFont = workbook.createFont();
-        requireFieldFont.setFontName("宋体");
-        requireFieldFont.setColor(IndexedColors.RED.getIndex());
-
-        requireFieldFont.setFontHeightInPoints((short) 12);
-
-        CellStyle headerStyle = this.workbook.createCellStyle();
-        headerStyle.setFont(requireFieldFont);
-        headerStyle.setAlignment(HorizontalAlignment.LEFT);
-        return headerStyle;
-    }
 }
